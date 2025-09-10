@@ -1,27 +1,29 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
+/* General Reset */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     background-color: #f8f4ef;
     color: #333;
 }
 
+/* Headings */
 h1, h2, h3 {
     color: #444;
+    margin-bottom: 15px;
 }
 
-/* NAV RESET & RESPONSIVE NAV (Option A) */
-* {
-    box-sizing: border-box;
-}
-
+/* Navigation */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 6%; /* responsive horizontal padding */
+    padding: 12px 6%;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,72 +34,46 @@ h1, h2, h3 {
 
     .navbar .logo {
         color: #fff;
-        margin: 0;
         font-weight: 600;
-        font-size: 1.15rem;
+        font-size: 1.2rem;
     }
 
 .nav-links {
     display: flex;
     gap: 18px;
-    margin: 0; /* remove default UL margin */
-    padding: 0; /* remove default UL padding */
     list-style: none;
     align-items: center;
 }
 
     .nav-links li {
-        white-space: nowrap; /* prevents internal break of each item */
+        white-space: nowrap;
     }
 
     .nav-links a {
         color: #fff;
         text-decoration: none;
-        padding: 8px 10px; /* clickable area */
+        padding: 8px 10px;
         display: inline-block;
+        transition: color 0.3s;
     }
 
-/* Reduce spacing on medium screens so links fit */
-@media (max-width: 900px) {
-    .nav-links {
-        gap: 12px;
-    }
-
-    .navbar {
-        padding: 10px 4.5%;
-    }
-
-        .navbar .logo {
-            font-size: 1.05rem;
+        .nav-links a:hover {
+            color: #222;
         }
-}
 
-/* Adjust skill cards for smaller screens */
-@media (max-width: 600px) {
-    .skill-cards {
-        flex-direction: column; /* stack cards vertically */
-        gap: 15px; /* smaller gap for stacked layout */
-    }
-
-    .card {
-        width: 100%; /* make each card full width */
-    }
-}
-
-
-
-/* Hero */
+/* Hero Section */
 .hero {
     background: #f1e4d1;
-    padding: 120px 20px 80px;
+    padding: 140px 20px 80px; /* Extra top padding for fixed navbar */
     text-align: center;
 }
 
     .hero .profile-pic {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
         border-radius: 50%;
         border: 6px solid #d8b4a0;
+        object-fit: cover;
     }
 
     .hero h1 {
@@ -106,40 +82,58 @@ h1, h2, h3 {
         color: #222;
     }
 
-/* Intro */
-.intro, .skills, .projects, .contact {
+    .hero p {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+/* Sections */
+section {
     padding: 80px 10%;
     text-align: center;
 }
 
-/* Skills */
+.intro, .skills, .projects, .contact {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Skills Section */
 .skill-cards {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .card {
     background: #fff;
     border-radius: 12px;
     padding: 20px;
-    width: 40%;
+    width: 45%;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s;
-    text-align: left; /* Left align inside */
+    text-align: left;
 }
 
     .card:hover {
         transform: scale(1.05);
     }
 
-/* Projects */
+    .card h3 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+/* Projects Section */
 .projects .project {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 50px 0;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
     .projects .project.reverse {
@@ -148,22 +142,29 @@ h1, h2, h3 {
 
 .project-text {
     flex: 1;
-    text-align: left; /* Left align descriptions */
+    min-width: 280px;
+    text-align: left;
 }
 
 .project-title {
-    text-align: center; /* Center project headings */
+    text-align: center;
     margin-bottom: 15px;
 }
 
-.project-img img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+.project-img {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
 }
 
-/* Contact */
+    .project-img img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+/* Contact Section */
 .contact p {
     margin: 10px 0;
 }
@@ -190,4 +191,53 @@ footer {
     background: #d8b4a0;
     color: #fff;
     margin-top: 50px;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 12px;
+    }
+
+    .navbar {
+        padding: 10px 4.5%;
+    }
+
+        .navbar .logo {
+            font-size: 1.05rem;
+        }
+
+    .card {
+        width: 100%;
+    }
+
+    .projects .project {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+        .hero h1 {
+            font-size: 2em;
+        }
+
+        .hero .profile-pic {
+            width: 150px;
+            height: 150px;
+        }
+
+    .projects .project {
+        gap: 15px;
+    }
 }
