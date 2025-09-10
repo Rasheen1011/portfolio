@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">My Portfolio</h2>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+            <h1>Rasheen Thathsarani</h1>
+            <p>
+                Computing & Software Engineering Graduate (HND - Awaiting Results) |
+                Skilled in Web Development, Programming & Database Management |
+                Strong in Problem-Solving, Teamwork & Communication |
+                Seeking Entry-Level Opportunities in Software & IT Development
+            </p>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section id="intro" class="intro">
+        <h2>Introduction</h2>
+        <p>
+            I am passionate about all aspects of Web Design and Development. I enjoy creating both functional and visually appealing websites, 
+            working on both front-end and back-end development, and collaborating with others who are enthusiastic about solving problems through design
+            and technology. I am a multilingual communicator, with Sinhala as my native language, and I am also fluent in English, which allows me to
+            connect with diverse people and adapt easily to different environments. I have completed my Higher National Diploma in Computing and Software
+            and am currently awaiting the results. During my studies, I have developed several educational websites using HTML and CSS, combining creativity
+            and technical skills in every project.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skill-cards">
+            <div class="card">
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>Programming (Java, C#, SQL)</li>
+                    <li>Web Development (HTML, CSS, JavaScript)</li>
+                    <li>Database Management (MySQL, phpMyAdmin)</li>
+                    <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Problem-Solving & Analytical Thinking</li>
+                    <li>Team Collaboration & Communication</li>
+                    <li>Adaptability & Quick Learning</li>
+                    <li>Time Management</li>
+                    <li>Attention to Detail</li>
+                    <li>Decision Making</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <h2>Academic Projects</h2>
+
+        <div class="project">
+            <div class="project-text">
+                <h3 class="project-title">Yatraa - Digital Gateway</h3>
+                <p>
+                    Tourism web application built with PHP, CSS, and MySQL featuring user authentication,
+                    booking system, and a comprehensive admin panel for Sri Lankan tourism.
+                </p>
+            </div>
+            <div class="project-img">
+                <img src="yatraa.png" alt="Yatraa Project">
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-text">
+                <h3 class="project-title">FitZone Fitness Center</h3>
+                <p>
+                    Comprehensive fitness management system with role-based authentication
+                    and e-commerce features for gym management and member services.
+                </p>
+            </div>
+            <div class="project-img">
+                <img src="fitzone.png" alt="FitZone Project">
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-text">
+                <h3 class="project-title">Paws Shop System</h3>
+                <p>
+                    Online pet shop system developed with PHP and MySQL including product listings,
+                    order management, and customer authentication.
+                </p>
+            </div>
+            <div class="project-img">
+                <img src="pawshop.png" alt="Paws Shop Project">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p><i class="fas fa-phone"></i> +94 71 158 2220</p>
+        <p><i class="fas fa-envelope"></i> thathsaranimadara15@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 20/B/2, Purana vihara road, Kahalla, Katugastota, Kandy, Sri Lanka</p>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/rasheen-thathsarani-aba68b383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Rasheen1011"><i class="fab fa-github"></i></a>
+            <a href="mailto:thathsaranimadara15@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p> Rasheen Thathsarani | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
