@@ -72,14 +72,18 @@ h1, h2, h3 {
         }
 }
 
-/* If it is very narrow, this will stack links below the logo (safe fallback) */
+/* Adjust skill cards for smaller screens */
 @media (max-width: 600px) {
-    .nav-links {
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: flex-end;
+    .skill-cards {
+        flex-direction: column; /* stack cards vertically */
+        gap: 15px; /* smaller gap for stacked layout */
+    }
+
+    .card {
+        width: 100%; /* make each card full width */
     }
 }
+
 
 
 /* Hero */
